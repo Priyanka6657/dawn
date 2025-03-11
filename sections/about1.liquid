@@ -1,0 +1,104 @@
+<section class="about-banner">
+  <img src="{{section.settings.about-banner-img | img_url :'master' }}">
+</section>
+<section class="image-content">
+  <div class="about-image">
+    <img src="{{ section.settings.about-product | img_url:'master' }}">
+  </div>
+  <div class="about-text">
+    <div class="about-text-heading">
+      <h4>About</h4>
+      <p>Gave a Caribbean feel</p>
+    </div>
+    <div class="para">
+      <p>We are a Caribbean inspired snack company. 
+        We sell 4 brands of peanut butter, and 5 snacks. 
+        Peanut Brittle, Coconut Brittle, Coconut Fudge, 
+        Chanm Chanm and a vanilla fudge called dous makos.</p>
+    </div>
+    <h4>Having 6 wonderful year in delivering the best peanut butter and 
+      5 type of snacks with quality best product</h4>
+    <div class="progress-bars">
+      <div class="progress-bar-1">
+        <h4>Quality 4.7/5</h4>
+        <hr class="horizontal-row">
+      </div>
+      <div class="progress-bar-2">
+        <h4>Customer Satisfaction 4.8/5</h4>
+        <hr class="horizontal-row">
+      </div>
+      <div class="progress-bar-3">
+        <h4>Varieties of Product 4.46/6</h4>
+        <hr class="horizontal-row">
+      </div>
+    </div>
+  </div> 
+</section>
+
+<section class="brands">
+  <div class="brands-heading">
+    <h1>4 BRANDS OF PEANUTS BUTTER</h1>
+    <h4>we have 4 top brand of peanut butter for Caribbean food for giving you delicious taste.</h4>
+  </div>
+  <div class="brands-logo">
+    <img src="{{ section.settings.brand-logo-one | default: 'gf.png'| img_url:'master' }}">
+    <img src="{{ section.settings.brand-logo-two | img_url:'master'}}">
+    <img src="{{ section.settings.brand-logo-three | img_url:'master'}}">
+    <img src="{{ section.settings.brand-logo-four | img_url:'master'| default: 'gf.png'}}">
+  </div>
+  <div class="brands-footer">
+    <h1>5 snakes BRANDS</h1>
+    <h4>we have 4 top brand of peanut butter for Caribbean food for giving you delicious taste.</h4>
+    <ul>
+      <li>Peanut Brittle</li>
+      <li>Peanut Brittle</li>
+      <li>Peanut Brittle</li>
+      <li>Peanut Brittle</li>
+      <li>Peanut Brittle</li>
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "About Section",
+    "settings": [
+      {
+        "type":"image_picker",
+        "id":"about-banner-img",
+        "label":"About Banner"
+      },
+      {
+        "type":"image_picker",
+        "id":"about-product",
+        "label":"About Product"
+      },
+      {
+        "type":"image_picker",
+        "id":"brand-logo-one",
+        "label":"First Brand"
+      },
+      {
+        "type":"image_picker",
+        "id":"brand-logo-two",
+        "label":"Second Brand"
+      },
+      {
+        "type":"image_picker",
+        "id":"brand-logo-three",
+        "label":"Third Brand"
+      },
+      {
+        "type":"image_picker",
+        "id":"brand-logo-four",
+        "label":"Four Brand"
+      }
+    ],
+    "presets":[
+      {
+        "name":"About Section"
+      }
+    ]
+  }
+{% endschema %}
+service_kdqhgwom

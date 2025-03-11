@@ -1,0 +1,168 @@
+{{ 'style.css' | asset_url | stylesheet_tag }}
+<section class="card-section">
+  <div class="card-section-inner">
+    <div class="label-cardSection">
+        <div class="label">
+          <p>Keywords</p>
+          <span >Spring <i class="ri-close-line"></i></span>
+          <span >Smart <i class="ri-close-line"></i></span>
+          <span >Modren <i class="ri-close-line"></i></span>
+        </div>
+        
+        <div class="second-box">
+          <div class="rows">
+            <div class="box"></div>
+            <div>
+              <h2>Label</h2>
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="rows">
+            <div class="box"></div>
+            <div>
+              <h2>Label</h2>
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="rows">
+            <div class="box"></div>
+            <div>
+              <h2>Label</h2>
+              <p>Description</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="range-section">
+          <div class="text">
+            <h1>Label</h1>
+            <h2>$0-100</h2>
+          </div>
+          <div class="range">
+            <input type="range">
+          </div>
+        </div>
+    </div>
+  
+    <div class="navigation-cards">
+      <div class="navbar" id="card-navbar">
+          <div class="search-bar">
+            <input type="text" id="searchInput" class="input-bar" placeholder="Search for products" oninput="filterProducts()">
+            <span class="search-icon" id="serchButton">
+                <i class="bi bi-search"></i>
+            </span>
+        </div>
+
+        <div class="button-list">
+          <input type="button" id="new-button" value="New">
+          <button class="grey-buttons">Price ascending</button>
+          <button class="grey-buttons">Price descending</button>
+          <button class="grey-buttons">Rating</button>
+        </div>
+      </div>
+       <p id="messageBox"></p>
+      <div class="product-grid">
+       
+      {% for product in collections.all.products %}
+        
+      <div class="product-grid-inner">
+        <div class="product-image">
+          <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+        </div>
+        <div class="product-description">
+          <div class="product-title">
+            <h3>{{ product.title }}</h3>
+          </div>
+          <div class="price-button">
+            <h2>{{ product.price | money }}</h2>
+            <button type="submit">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
+</div>
+    </div>
+  </div>
+  
+  <div class="related-products">
+    <h1>Related Products</h1>
+    <div class="related-product-cards">
+    {% assign counter = 0 %}
+      {% for product in collections.all.products %}
+       {% if counter<3 %}
+        <div class="product-grid-inner" id="product-grid-inner">
+          <div class="product-image" id="related-product-image">
+            <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+          </div>
+          <div class="product-description">
+            <div class="product-title">
+              <h3>{{ product.title }}</h3>
+            </div>
+            <div class="price-button">
+              <h2>{{ product.price | money }}</h2>
+              <button type="submit">Add to Cart</button>
+            </div>
+          </div>
+      </div>
+    {% assign counter=counter | plus:1 %}
+
+    {% endif %}
+  {% endfor %}
+    </div>
+  </div>
+</section>  
+
+<section class="brands">
+  <div class="brands-heading">
+    <h1>4 BRANDS OF PEANUTS BUTTER</h1>
+    <h4>we have 4 top brand of peanut butter for Caribbean food for giving you delicious taste.</h4>
+  </div>
+  <div class="brands-logo">
+    <img src="{{ section.settings.brand-logo-one | img_url:'master'}}">
+    <img src="{{ section.settings.brand-logo-two | img_url:'master'}}">
+    <img src="{{ section.settings.brand-logo-three | img_url:'master'}}">
+    <img src="{{ section.settings.brand-logo-four | img_url:'master'}}">
+  </div>
+  <div class="brands-footer">
+    <h1>5 snakes BRANDS</h1>
+    <h4>we have 4 top brand of peanut butter for Caribbean food for giving you delicious taste.</h4>
+    <ul>
+      <li>Peanut Brittle</li>
+      <li>Peanut Brittle</li>
+      <li>Peanut Brittle</li>
+      <li>Peanut Brittle</li>
+      <li>Peanut Brittle</li>
+    </ul>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Product Section",
+    "settings": [
+      {
+        "type":"image_picker",
+        "id":"brand-logo-one",
+        "label":"First Brand"
+      },
+      {
+        "type":"image_picker",
+        "id":"brand-logo-two",
+        "label":"Second Brand"
+      },
+      {
+        "type":"image_picker",
+        "id":"brand-logo-three",
+        "label":"Third Brand"
+      },
+      {
+        "type":"image_picker",
+        "id":"brand-logo-four",
+        "label":"Four Brand"
+      }
+      
+    ],
+    "presets":[{
+      "name": "Product Section",
+    }]
+  }
+{% endschema %}

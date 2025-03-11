@@ -1,0 +1,82 @@
+<section class="footer">
+  <div class="footer-inner">
+    <div class="row-one">
+      <div class="text-logos">
+        <h3>FOLLOW US@FLAVOURMINGLE</h3>
+        <div class="logos">
+          <div class="logo">
+            <i class="ri-instagram-line"></i>
+          </div>
+          <div class="logo">
+            <i class="ri-tiktok-fill"></i>
+          </div>
+          <div class="logo">
+            <i class="ri-facebook-fill"></i>
+          </div>
+          <div class="logo">
+            <i class="ri-linkedin-fill"></i>
+          </div>
+          <div class="logo">
+            <i class="ri-youtube-fill"></i>
+          </div>
+        </div>
+      </div>
+    
+      <div class="footer-logo">
+        <img src="{{ section.settings. logo-image | img_url:'master'}}">
+      </div>
+      <div class="text-subscribe">
+        <h3>COME FIRST EARN FIRST UPTO WORTH</h3>
+        <h2>30% VOURCHER</h2>
+        <button>Subscribe now</button>
+      </div>
+    </div>
+    <hr class="horizontal-line">
+
+    <div class="row-two">
+      <div class="content-1">
+          <h3>BE UPDATED VIA NEWSLETTER</h3>
+        <div class="para-button">
+          <p>Get Instant Update about Offers, Update and</p>
+          <p>Events</p>
+          <div class="btn"><button>SIGN UP</button></div>
+        </div>
+      </div>
+      <div class="content-2">
+        <h3>Services</h3>
+        <ul class="footer-service-list">
+          <li>Peanut Brittle</li>
+          <li>Peanut Brittle</li>
+          <li>Peanut Brittle</li>
+          <li>Peanut fudge</li>
+        </ul>
+      </div>
+      <div class="content-3">
+        <h3>Contact us</h3>
+        <ul class="contact-list">
+          <li>+1 (123) 55223</li>
+          <mailto:li>abx@flavourmingle.com</li>
+          <li>xyz street, winter laudge</li>
+          <li>Stanford, California</li>
+        </ul>
+      </div>
+    </div>
+   </div>
+</section>
+{% schema %}
+  {
+    "name": "Footer Section",
+    "settings": [
+      {
+        "type":"image_picker",
+        "id":"logo-image",
+        "label":"Choose logo"
+      }
+    ],
+    "presets": [
+      {
+        "name":"Footer Section"
+      }
+    ]
+  }
+{% endschema %}

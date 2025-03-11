@@ -1,0 +1,76 @@
+
+<!-- Announcement Section Start -->
+<header>
+  <div class="announcement-bar">
+    <h1 class="text" style="background-color:{{ section.settings.background-color }};">
+     {{ section.settings.announcement-text | replace:"START","<b class='extra-bold'>START</b>" | replace:"30%","<b class='extra-bold'>30%</b>"}}
+</div>
+</header>
+<!-- Announcement Section End -->
+<!-- Navber Section Start -->
+<nav class="navbar">
+  <div class="img-text">
+    <img class="logo" src="{{ section.settings.logo | img_url:'master'}}">
+    <p class="logo-text">{{ section.settings.logo-text }}</p>
+  </div>   
+  <div>
+   <ul class="nav-list">
+     <a href="{{ routes.root_url }}"><b>Home</b></a>
+
+     <a href="/pages/about">About us</a>
+     <a href="/pages/product">Product</a>
+     <a href="">Faq</a>
+   </ul>
+  </div>
+ <div class="search-list">
+    <div class="search-bar">
+        <input type="text" class="input-bar" placeholder="Search for products">
+        <span class="search-icon"><i class="bi bi-search"></i></span>
+    </div>
+
+    <div class="icons">
+        <div class="cart-container">
+            <i class="ri-shopping-cart-2-line text-gray fs-3 fw-semibold position-relative"></i>
+            <sup class="cart-badge">2</sup>
+        </div>
+         <i class="ri-user-line"></i>
+    </div>
+</div>
+
+
+</nav>
+<!-- Navbar Section End -->
+{% schema %}
+  {
+    "name":"header Section",
+    "settings":[
+      {
+        "type":"text",
+        "id":"announcement-text",
+        "label":"Enter Mesaage",
+        "default":"Get upto 30% off on your first Purchase | Use Code: START | Shop Now"
+      },
+      {
+        "type":"color",
+        "id":"background-color",
+        "label":"Choose color",
+        "default":"#ffdc30"
+      },
+      {
+        "type":"image_picker",
+        "id":"logo",
+        "label":"Pick logo",
+      },
+      {
+        "type":"text",
+        "id":"logo-text",
+        "label":"Add logo text",
+        "default":"Flavour Mingle"
+      }
+    ],
+    "presets":[{
+      "name":"header Section"
+    }]
+  }
+   
+{% endschema %}
